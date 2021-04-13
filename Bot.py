@@ -15,10 +15,10 @@ print ("Done Loggining")
 
 chatlink=input("Chat Link")
 
-chatinfo=client.get_from_code(chatlink)
+chatinfo=clint.get_from_code(chatlink)
 chatId=chatinfo.objectId
 comId=chatinfo.path[1:chatinfo.path.index('/')]
-subclient=amino.SubClient(comId=comId, profile=client.profile)
+subclient=amino.SubClient(comId=comId, profile=clint.profile)
 
 #subclient.send_message(chatId=chatId, message="تم التفعيل", messageType=0)
 
@@ -168,7 +168,7 @@ def getmess():
 				      except:
 				           pass
 				      subclient.send_message(chatId=chatId, message=userinfoo3, messageType=0, replyTo=messageId)
-				      subclient.send_message(chatId=chatId, message="متابعينك: "+followc, messageType=0, replyTo=messageId)
+				      subclient.send_message(chatId=chatId, message="متابعينك: "+follow, messageType=0, replyTo=messageId)
 				      getmess()
 				elif content ==  "/معلوماتي/id":
 				    messageinfo=subclient.get_message_info(chatId=chatId, messageId=messageId)
